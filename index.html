@@ -1,1 +1,221 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jake Rains | AI Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-black: #0a0a0a;
+            --accent-green: #00ff66;
+            --secondary-green: #00cc55;
+            --text-color: #e0e0e0;
+            --card-bg: #1a1a1a;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Space Mono', monospace;
+            background-color: var(--primary-black);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-black), #1a1a1a);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(45deg, transparent, var(--accent-green) 10%, transparent 20%),
+                linear-gradient(-45deg, transparent, var(--secondary-green) 10%, transparent 20%);
+            background-size: 50px 50px;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 15px;
+            border: 2px solid var(--accent-green);
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 255, 102, 0.2);
+        }
+        .hero-image:hover {
+            transform: scale(1.05);
+            border-color: var(--secondary-green);
+            box-shadow: 0 0 30px rgba(0, 255, 102, 0.3);
+        }
+        .hero-text {
+            flex: 1;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--accent-green);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-tagline {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            max-width: 600px;
+            position: relative;
+            z-index: 2;
+        }
+        .projects {
+            background-color: #111;
+            padding: 4rem 0;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid transparent;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-green);
+            box-shadow: 0 10px 20px rgba(0, 255, 102, 0.2);
+        }
+        .project-card h3 {
+            color: var(--accent-green);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .project-card-icon {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        .project-card a {
+            color: var(--secondary-green);
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: auto;
+            align-self: flex-start;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .social-links a {
+            color: var(--accent-green);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: var(--secondary-green);
+        }
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-image {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <img src="images/LegoJakeHeadshot.jpg" alt="Jake Rains LEGO Avatar" class="hero-image">
+                <div class="hero-text">
+                    <h1>Jake Rains</h1>
+                    <p class="hero-tagline">AI Developer | Generative Technology Enthusiast | "I think therefore I am."</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects">
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>
+                        <span class="project-card-icon">🖥️</span>
+                        InfoKiosk
+                    </h3>
+                    <p>Dynamic multi-screen kiosk display system built with Next.js</p>
+                    <p>Features:
+                        • Admin content management
+                        • Animated transitions
+                        • Responsive design
+                    </p>
+                    <a href="https://github.com/jakerains/InfoKiosk">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>
+                        <span class="project-card-icon">🎮</span>
+                        FastMoney
+                    </h3>
+                    <p>Python-based implementation of the Family Feud "Fast Money" game show segment</p>
+                    <p>Features:
+                        • Two-player support
+                        • Full-screen game board
+                        • Score tracking
+                    </p>
+                    <a href="https://github.com/jakerains/FastMoney">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>
+                        <span class="project-card-icon">🤖</span>
+                        Fooocus
+                    </h3>
+                    <p>AI image generation and prompt engineering project</p>
+                    <p>Features:
+                        • Advanced image generation
+                        • Prompt optimization
+                        • AI-powered creativity
+                    </p>
+                    <a href="https://github.com/jakerains/Fooocus">View Project</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="social-links">
+            <a href="https://twitter.com/jakerains" target="_blank">X</a>
+            <a href="https://github.com/jakerains" target="_blank">GitHub</a>
+        </div>
+    </div>
+</body>
+</html>
